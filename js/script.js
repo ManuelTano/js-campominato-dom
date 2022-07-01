@@ -52,8 +52,11 @@ button.addEventListener('click', function () {
         const cella = createCell(i);
         grid.appendChild(cella);
         cella.addEventListener('click', function () {
-            this.classList.add('clicked');
             if (cella.classList.contains('clicked')) {
+                return;
+            }
+                this.classList.add('clicked');
+             
                 if (arr.includes(i)) {
                     cella.classList.add("red");
                     alert(`BOOOOOM! Hai perso! Hai trovato una bomba! Hai totalizzato un punteggio di ${userScore} punti!`);
@@ -62,7 +65,7 @@ button.addEventListener('click', function () {
                     grid.innerHTML = ""
 
                 }
-                else if (userScore < 100) {
+                else if (userScore < 84) {
                     userScore += 1;
                     score.innerHTML = `Score: ${userScore}`;
                 }
@@ -74,7 +77,7 @@ button.addEventListener('click', function () {
                     grid.innerHTML = ""
                 }
             }
-        })
+        )
     }
 
     button.innerHTML = 'Ricomincia'
