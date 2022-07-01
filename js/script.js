@@ -27,19 +27,19 @@ function createCell(content, levels) {
 let arr = [];
 let num;
 
-    for (let i = 0; i < 16; i++) {
-        num = Math.floor(Math.random() * 100);
-        console.log(num)
-        arr.push(num);
-        console.log(arr)
-    }
-    
+for (let i = 0; i < 16; i++) {
+    num = Math.floor(Math.random() * 100);
+    console.log(num)
+    arr.push(num);
+    console.log(arr)
+}
+
 
 
 // Tramite un click, genero la griglia
 
 button.addEventListener('click', function () {
-    
+
     let rows = 10;
     let cells = 10;
     const totalCell = rows * cells;
@@ -49,23 +49,28 @@ button.addEventListener('click', function () {
         const cella = createCell(i);
         grid.appendChild(cella);
         cella.addEventListener('click', function () {
-        this.classList.add('clicked');
-        if (cella.classList.contains('clicked')) {
-            if (arr.includes(i)) {
-                cella.classList.add("red");
-                alert(`Hai perso. Hai totalizzato un punteggio di ${userScore} punti!`);
-                 score.innerHTML = 'Score: 0';
+            this.classList.add('clicked');
+            if (cella.classList.contains('clicked')) {
+                if (arr.includes(i)) {
+                    cella.classList.add("red");
+                    alert(`BOOOOOM! Hai perso! Hai trovato una bomba! Hai totalizzato un punteggio di ${userScore} punti!`);
+                    console.log(`BOOOOOM! Hai perso! Hai trovato una bomba! Hai totalizzato un punteggio di ${userScore} punti!`)
+                    score.innerHTML = 'Score: 0';
+                    grid.innerHTML = ""
 
-            }
-            else if ( userScore < 100) {
-            userScore += 1;
-            score.innerHTML = `Score: ${userScore}`;
-            }
+                }
+                else if (userScore < 100) {
+                    userScore += 1;
+                    score.innerHTML = `Score: ${userScore}`;
+                }
 
-            else {
-                alert(`Partita terminata. Hai totalizzato un punteggio di ${userScore} punti!`);
+                else {
+                    alert(`Partita terminata. Hai totalizzato un punteggio massimo di 100 punti!`);
+                    console.log(`Partita terminata. Hai totalizzato un punteggio massimo di 100 punti!`)
+                    score.innerHTML = 'Score: 0';
+                    grid.innerHTML = ""
+                }
             }
-        } 
         })
     }
 
