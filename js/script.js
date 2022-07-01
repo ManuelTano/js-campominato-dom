@@ -24,10 +24,16 @@ function createCell(content, levels) {
     return cell;
 }
 
+let arr = [];
+let num;
 
-function randomNumber () {
-    for 
-}
+    for (let i = 0; i < 16; i++) {
+        num = Math.floor(Math.random() * 100);
+        console.log(num)
+        arr.push(num);
+        console.log(arr)
+    }
+    
 
 
 // Tramite un click, genero la griglia
