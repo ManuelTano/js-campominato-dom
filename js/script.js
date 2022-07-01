@@ -24,15 +24,6 @@ function createCell(content, levels) {
     return cell;
 }
 
-let arr = [];
-let num;
-
-for (let i = 0; i < 16; i++) {
-    num = Math.floor(Math.random() * 100);
-    console.log(num)
-    arr.push(num);
-    console.log(arr)
-}
 
 
 
@@ -45,6 +36,18 @@ button.addEventListener('click', function () {
     const totalCell = rows * cells;
     let userScore = 0;
     grid.innerHTML = "";
+
+    let arr = [];
+    let num;
+
+    for (let i = 0; i < 16; i++) {
+        num = Math.floor(Math.random() * 100);
+        console.log(num)
+        arr.push(num);
+        console.log(arr)
+}
+
+
     for (let i = 1; i <= totalCell; i++) {
         const cella = createCell(i);
         grid.appendChild(cella);
