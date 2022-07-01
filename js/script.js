@@ -25,6 +25,9 @@ function createCell(content, levels) {
 }
 
 
+function randomNumber () {
+    for 
+}
 
 
 // Tramite un click, genero la griglia
@@ -40,12 +43,12 @@ button.addEventListener('click', function () {
         const cella = createCell(i);
         grid.appendChild(cella);
         cella.addEventListener('click', function () {
-        this.classList.toggle('clicked');
+        this.classList.add('clicked');
         if (cella.classList.contains('clicked')) {
             userScore += 1;
             score.innerHTML = `Score: ${userScore}`;
             return;
-        }
+        } 
         })
     }
 
