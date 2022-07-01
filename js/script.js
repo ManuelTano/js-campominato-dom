@@ -51,9 +51,14 @@ button.addEventListener('click', function () {
         cella.addEventListener('click', function () {
         this.classList.add('clicked');
         if (cella.classList.contains('clicked')) {
+            if (arr.includes(i)) {
+                cella.classList.add("red");
+                alert(`Hai perso. Hai totalizzato un punteggio di ${userScore} punti!`)
+            }
+            else {
             userScore += 1;
             score.innerHTML = `Score: ${userScore}`;
-            return;
+             }
         } 
         })
     }

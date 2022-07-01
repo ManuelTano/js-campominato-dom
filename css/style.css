@@ -36,3 +36,7 @@ body {
     cursor: not-allowed;
 }
 
+#griglia .cell.clicked.red {
+    background-color: red;
+    cursor: not-allowed;
+}
